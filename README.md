@@ -98,14 +98,14 @@ src/main/java/com/example/ratelimiter/
 # Setup
 Step 1 - Start Redis
 
-```bash
+```
 docker run -d --name redis -p 6379:6379 redis:7.2-alpine
 
 ```
 
 Verify it is running:
 
-```bash
+```
 redis-cli ping
 ```
 
@@ -190,13 +190,13 @@ public class BackendApplication {
 ```
 Run it:
 ```
-bash
+
 cd backend
 mvn spring-boot:run
 ```
 Verify:
 
-```text
+```
 GET http://localhost:8080/api/test
 ```
 Should return:
@@ -208,10 +208,10 @@ json
 }
 ```
 Step 3 - Configure the Gateway
-```
+
 application.properties:
 
-properties
+```
 server.port=9090
 
 spring.main.web-application-type=reactive
@@ -238,11 +238,9 @@ To change algorithm, set rate-limiter.algorithm to one of:
    
 Step 4 - Run the Gateway
 ```
-bash
 cd api-gateway-ratelimiter
 mvn clean install
 mvn spring-boot:run
-
 ```
 You should see in the logs:
 
